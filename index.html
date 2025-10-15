@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Formularz</title>
+  <style>
+    body {
+      font-family:  sans-serif;
+      background: #f0f4f8;
+      padding: 40px;
+    }
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+    .form {
+      margin-bottom: 20px;
+    }
+    button {
+      background: #0078D4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005ea2;
+    }
+  </style>
+</head>
+<body>
+<form action="/submit" method="post">
+  <h2>Folrmularz</h2>
+  <div class="form">
+    <label for="name">Imię</label>
+    <input type="text" id="name" name="name" value="Jan" placeholder="Wpisz swoje imię" maxlength="20">
+  </div>
+  <div class="form">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="jan@example.com" placeholder="np. jan@domena.pl">
+  </div>
+  <div class="form">
+    <label>Płeć</label>
+    <input type="radio" id="male" name="gender" value="male" checked>
+    <label for="male">Mężczyzna</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Kobieta</label>
+  </div>
+  <div class="form">
+    <label for="wiek">Wiek</label>
+    <input type="number" id="wiek" name="wiek" min="18" max="99" step="1" value="30">
+  </div>
+  <div class="form">
+    <label for="kraj">Kraj</label>
+    <select id="kraj" name="kraj">
+      <option value="PL" selected>Polska</option>
+      <option value="DE">Niemcy</option>
+      <option value="FR">Francja</option>
+    </select>
+  </div>
+  <div class="form">
+    <label for="komentarz">Komentarz</label>
+    <textarea id="komentarz" name="komentarz" placeholder="Tutaj wpisz wiadomość..." maxlength="300"></textarea>
+  </div>
+  <div class="form">
+    <input type="checkbox" id="subscribe" name="subscribe" value="yes" checked>
+    <label for="subscribe">Zapisz mnie do newslettera</label>
+  </div>
+  <button type="submit">Wyślij</button>
+</form>
+</body>
+</html>
